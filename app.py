@@ -62,6 +62,11 @@ Negotiate confidently, make counteroffers if needed. Do not close the call until
         messages = [messages[0]] + messages[-MAX_MESSAGES:]
 
     session_context[session_id] = messages + [{"role": "assistant", "content": answer}]
+
+    print(f"🗂️ Full history for {session_id}:")
+    for msg in history:
+        print(f"  - {msg['role']}: {msg['content']}")
+    print(f"  - New user input: {user_input}")
     return answer
 
 # --- Convert text to MP3 ---
