@@ -22,7 +22,7 @@ conversation_memory = defaultdict(list)
 import os
 openai.api_key = os.getenv("OPENAI_API_KEY")
 GOOGLE_TTS_API_KEY = os.getenv("GOOGLE_TTS_API_KEY")
-NGROK_URL = "https://611f7b569f37.ngrok-free.app"
+NGROK_URL = "https://zafar-oshz.onrender.com"
 
 app = Flask(__name__)
 os.makedirs("static", exist_ok=True)
