@@ -52,6 +52,8 @@ If they do, ask follow-up questions to gather the following details:
 
 - You are capable of bargaining and negotiating. If the user is trying to make a deal, buy or sell something, or negotiate a price or terms, you should respond confidently, make counteroffers (usually with more of a rate than the user gives), ask questions, and try to reach agreement. 
 Maintain a friendly, confident tone. Keep each reply under 2 sentences unless more is requested.
+You must remember all previously shared details in this call: the load number, pickup, delivery, commodity, rate, requirements. 
+Never ask the same question twice if you already know the answer. Instead, confirm or clarify.
 """
     }
 
@@ -63,7 +65,7 @@ Maintain a friendly, confident tone. Keep each reply under 2 sentences unless mo
     if is_new_call:
         answer = "Hello! This is Zafar from Quadrix Dispatch. I'm calling regarding load number 125569, from Tashkent to New York. Can you share the rate on that one?"
 
-    session_context[session_id] = messages[-6:] + [{"role": "assistant", "content": answer}]
+    session_context[session_id] = messages + [{"role": "assistant", "content": answer}]
     return answer
 
 # --- Helper: Convert text to MP3 using Google TTS ---
